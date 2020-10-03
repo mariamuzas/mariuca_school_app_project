@@ -1,9 +1,9 @@
 DROP TABLE bookings;
 DROP TABLE students;
-DROP TABLE classes;
+DROP TABLE courses;
 
 
-CREATE TABLE classes(
+CREATE TABLE courses(
     id SERIAL PRIMARY KEY, 
     title VARCHAR(255),
     description VARCHAR(255),
@@ -17,11 +17,11 @@ CREATE TABLE students(
     name VARCHAR(255),
     dob VARCHAR(255),
     experience VARCHAR(255),
-    class_id INT REFERENCES class(id)
+    course_id INT REFERENCES course(id)
 );
 
 CREATE TABLE bookings(
     id SERIAL PRIMARY KEY,
-    class_id INT REFERENCES class(id),
+    course_id INT REFERENCES course(id),
     student_id INT REFERENCES student(id)
 );

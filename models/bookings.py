@@ -1,6 +1,6 @@
 class Bookings:
 
-    def __init__(self, class_id, student, id = None):
-        self.class_id = class_id
+    def __init__(self, course_id, student, id = None):
+        self.course_id = course_id
         self.student = student
         self.id = id 
