@@ -10,6 +10,7 @@ def save(course):
     course.id = results[0]['id']
     return course
 
+
 def select_all():
     courses = []
 
@@ -21,6 +22,7 @@ def select_all():
         courses.append(course)
     return courses
 
+
 def select(id):
     course = None 
     sql = "SELECT * FROM courses WHERE id = %s"
@@ -31,7 +33,18 @@ def select(id):
         course = Course(result['title'], result['description'], result['date'], result['duration'], result['max_num_students'], result['id'])
     return course
 
+def delete(id):
+    sql = "DELETE FROM courses WHERE id = %s"
+    values = [id]
+    run_sql(sql, values)
+
+
 def delete_all():
     sql = "DELETE FROM courses"
     run_sql(sql)
 
+
+def update(course):
+    sql = "UPDATE courses SET (title, description, date, duration, max_num_students) = (%s, %s, %s, %s) WHERE id = %s"
+    values = [course.title, course.description, course.date, course.duration, course.max_num_students, courses.id]
+    run_sql(sql, values)
