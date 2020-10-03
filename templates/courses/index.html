@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block content %}
+    <h2>List of Courses</h2>
+    {% for course in courses %}
+        <section>
+            <h3>{{course.title}}</h3>
+            <ul>
+                <li>Date: {{course.date}}</li>
+                <li>{{course.duration}}hours</li>
+            </ul>
+
+
+        </section>
+    {% endfor %}
+{% endblock content %}
