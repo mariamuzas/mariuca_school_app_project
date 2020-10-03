@@ -11,6 +11,7 @@ def save(student):
     student.id = results[0]['id']
     return student
 
+
 def select_all():
     students = []
 
@@ -23,6 +24,7 @@ def select_all():
         students.append(student)
     return students
 
+
 def select(id):
     student = None 
     sql = "SELECT * FROM students WHERE id = %s"
@@ -34,10 +36,12 @@ def select(id):
         student = Student(result['name'], result['dob'], result['experience'], course_id, result['id'])
     return student
 
+
 def delete(id):
     sql = "DELETE FROM students WHERE id = %s"
     values = [id]
     run_sql(sql, values)
+
 
 # not sure if it is working 
 def update(student):

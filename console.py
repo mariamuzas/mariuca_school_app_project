@@ -18,14 +18,14 @@ course_repository.save(course_2)
 course_3 = Course("Salads aren't boring", 'Vegetarian recipes that you never thought about', 'Tuesdays at 17pm', 1, 15)
 course_repository.save(course_3)
 
-student1 = Student('Valerie Liberty', '43', 'Intermediate', 3)
-student_repository.save(student1)
+student_1 = Student('Valerie Liberty', '43', 'Intermediate', 3)
+student_repository.save(student_1)
 
-student1 = Student('Marco Botton', '28', 'Beginner', 1)
-student_repository.save(student1)
+student_2 = Student('Marco Botton', '28', 'Beginner', 1)
+student_repository.save(student_2)
 
-student1 = Student('Alex Mateo', '35', 'Advance', 1)
-student_repository.save(student1)
+student_3 = Student('Alex Mateo', '35', 'Advance', 1)
+student_repository.save(student_3)
 
 
 

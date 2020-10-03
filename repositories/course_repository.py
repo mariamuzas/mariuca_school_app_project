@@ -1,5 +1,6 @@
 from db.run_sql import run_sql
 from models.course import Course
+from models.student import Student
 
 import repositories.student_repository as student_repository
 
@@ -48,3 +49,16 @@ def update(course):
     sql = "UPDATE courses SET (title, description, date, duration, max_num_students) = (%s, %s, %s, %s) WHERE id = %s"
     values = [course.title, course.description, course.date, course.duration, course.max_num_students, courses.id]
     run_sql(sql, values)
+
+
+def students(course):
+    students = []
+
+    sql = "SELECT * FROM students WHERE course_id = %s"
+    values = [course.id]
+    results = run_sql(sql, values)
+
+    for row in results: 
+        student = Student(row['name'], row['dob'], row['experience'], row['course_id'], row['id'])
+        students.append(student)
+    return students
