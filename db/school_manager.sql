@@ -17,11 +17,11 @@ CREATE TABLE students(
     name VARCHAR(255),
     dob VARCHAR(255),
     experience VARCHAR(255), 
-    course_id INT REFERENCES courses(id) ON DELETE CASCADE 
+    course_id INT REFERENCES courses(id) ON DELETE CASCADE
 );
 
 CREATE TABLE bookings(
     id SERIAL PRIMARY KEY,
-    course_id INT REFERENCES courses(id) ON DELETE CASCADE,
-    student_id INT REFERENCES students(id) ON DELETE CASCADE
+    course_id  SERIAL REFERENCES courses(id) ON DELETE CASCADE,
+    student_id SERIAL REFERENCES students(id) ON DELETE CASCADE
 );

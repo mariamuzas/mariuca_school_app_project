@@ -1,5 +1,5 @@
 class Course:
-    def __init__(self, title, description, date, duration, max_num_students, id=None):
+    def __init__(self, title, description, date, duration, max_num_students, id = None):
         self.title = title
         self.description = description
         self.date = date

@@ -1,6 +1,7 @@
 from db.run_sql import run_sql
 from models.course import Course
 
+import repositories.student_repository as student_repository
 
 def save(course):
     sql = "INSERT INTO courses ( title, description, date, duration, max_num_students ) VALUES ( %s, %s, %s, %s, %s ) RETURNING id"
@@ -16,6 +17,21 @@ def select_all():
     results = run_sql(sql)
 
     for row in results:
-        course = Course(row['title'], row['description'], row['date'], row['duration'], row['max_num_student'])
+        course = Course(row['title'], row['description'], row['date'], row['duration'], row['max_num_students'], row['id'])
         courses.append(course)
+    return courses
+
+def select(id):
+    course = None 
+    sql = "SELECT * FROM courses WHERE id = %s"
+    values = [id]
+    result = run_sql(sql, values)[0]
+
+    if result is not None:
+        course = Course(result['title'], result['description'], result['date'], result['duration'], result['max_num_students'], result['id'])
     return course
+
+def delete_all():
+    sql = "DELETE FROM courses"
+    run_sql(sql)
+
