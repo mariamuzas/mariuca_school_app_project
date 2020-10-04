@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block content %}
+
+    <h2>{{course.title}}</h2>
+    <p>{{course.description}}</p>
+    <p>{{course.date}}</p>
+    <p>{{course.duration}}h</p>
+    <ul>Students in the course:
+        {% for student in students %}
+            <li>{{student.name}}</li>
+        {% endfor %}
+    </ul>
+
+{% endblock content %}

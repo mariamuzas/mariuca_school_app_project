@@ -28,3 +28,15 @@ def create_course():
 
     return redirect("/courses")
 
+@courses_blueprint.route("/courses/<id>")
+def show(id):
+    course = course_repository.select(id)
+    students = course_repository.students(course)
+    return render_template("courses/show.html", course=course, students=students)
+
+# @courses_blueprint.route("courses/<id>/edit")
+# def edit_course(id):
+#     course = course_repository.select(id)
+#     return render_template('course/edit.html', course=course)
+
+# @courses_blueprint.route("courses/<id>")
