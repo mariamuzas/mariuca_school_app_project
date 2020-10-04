@@ -46,8 +46,8 @@ def delete_all():
 
 
 def update(course):
-    sql = "UPDATE courses SET (title, description, date, duration, max_num_students) = (%s, %s, %s, %s) WHERE id = %s"
-    values = [course.title, course.description, course.date, course.duration, course.max_num_students, courses.id]
+    sql = "UPDATE courses SET (title, description, date, duration, max_num_students) = (%s, %s, %s, %s, %s) WHERE id = %s"
+    values = [course.title, course.description, course.date, course.duration, course.max_num_students, course.id]
     run_sql(sql, values)
 
 

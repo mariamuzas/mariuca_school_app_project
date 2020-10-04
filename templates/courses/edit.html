@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h2>Edit course</h2>
+
+<form action="/courses/{{course.id}}" method="POST">
+    <div>
+        <label for="title">Course Title:</label>
+        <input type="text" id="title" name="title" value={{course.title}}>
+    </div>
+    <div>
+        <label for="description">Description:</label>
+        <input type="text" id="description" name="description" value={{course.description}}>
+    </div>
+    <div>
+        <label for="date">Date:</label>
+        <input type="text" id="date" name="date" value={{course.date}}>
+    </div>
+    <div>
+        <label for="duration">Duration:</label>
+        <input type="number" id="duration" name="duration" value={{course.duration}}>
+    </div>
+    <div>
+        <label for="max_num_student">Number of students:</label>
+        <input type="number" id="max_num_students" name="max_num_students" value="max_num_students">
+    </div>
+    <button type="submit">Save changes</button>
+
+</form>
+    
+{% endblock content %}
