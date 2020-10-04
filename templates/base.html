@@ -9,9 +9,9 @@
     <h1>Mariuca School App</h1>
     <nav>
         <ul class="menu">
-            <li><a href="/">Home</a></li>
-            <li><a href="/students">Students</a></li>
-            <li><a href="/courses">Courses</a></li>
+            <li><a href="{{url_for('home')}}">Home</a></li>
+            <li><a href="{{ url_for('students.list_students')}}">Students</a></li>
+            <li><a href="{{ url_for('courses.list_courses')}}">Courses</a></li>
             <li><a href="">Bookings</a></li>
         </ul>
     </nav>

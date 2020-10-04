@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block content %}
+    <h2>Add a New Student</h2>
+
+    <form action="/students" method="POST">
+        <div>
+            <label for="name">First and Second name of the Student:</label>
+            <input type="text" id="name" name="name">
+        </div>
+        <div>
+            <label for="dob">Date of Birth:</label>
+            <input type="date" id="dob" name="dob">
+        </div>
+        <div>
+            <label for="experience">Experience:</label>
+            <input type="text" id="experience" name="experience">
+        </div>
+        <div>
+            <label for="course_id">Select Course:</label>
+            <select name="course_id" id="course_id">
+                {% for course in courses %}
+                    <option value="{{course.id}}"> {{ course.title }}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <input type="submit">
+
+    </form>
+{% endblock content %}

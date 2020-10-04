@@ -5,7 +5,7 @@ import repositories.course_repository as course_repository
 
 def save(student):
     sql = "INSERT INTO students(name, dob, experience, course_id ) VALUES ( %s, %s, %s, %s ) RETURNING id"
-    values = [ student.name, student.dob, student.experience, student.course_id ]
+    values = [ student.name, student.dob, student.experience, student.course.id ]
     #  I have an error here, not sure how to fix
     results = run_sql( sql, values )
     student.id = results[0]['id']
@@ -44,12 +44,12 @@ def delete(id):
 
 
 # not sure if it is working 
-def update(student):
-    sql = "UPDATE students SET (name, dob, experience, course_id) = (%s, %s, %s, %s) WHERE id = %s"
-    values = [student.name, student.dob, student.experience, student.course_id, student.id]
-    run_sql(sql, values)
+# def update(student):
+#     sql = "UPDATE students SET (name, dob, experience, course_id) = (%s, %s, %s, %s) WHERE id = %s"
+#     values = [student.name, student.dob, student.experience, student.course_id, student.id]
+#     run_sql(sql, values)
 
 
-def delete_all():
-    sql = "DELETE FROM students"
-    run_sql(sql)
+# def delete_all():
+#     sql = "DELETE FROM students"
+#     run_sql(sql)

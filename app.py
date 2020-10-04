@@ -9,7 +9,7 @@ app.register_blueprint(courses_blueprint)
 app.register_blueprint(student_blueprint)
 
 @app.route("/")
-def main():
+def home():
     return render_template('index.html')
 
 if __name__ == '__main__':

@@ -3,9 +3,9 @@
 
     <p>Welcome to Mariuca's School's Students & Classes manager. </p>
 
-    <button> Add Student </button>
-    <button>Student List</button>
-    <button><a href="/courses/new">Create Course</a></button>
-    <button><a href="/courses">Upcoming classes</a></button>
+    <button><a href="{{ url_for('students.new_student') }}"> Add Student </a></button>
+    <button> <a href="{{ url_for('students.list_students')}}">Student List</a></button>
+    <button><a href="{{ url_for('courses.new_course') }}">Create Course</a></button>
+    <button><a href="{{ url_for('courses.list_courses')}}">Upcoming classes</a></button>
     
 {% endblock content %}
