@@ -1,0 +1,7 @@
+{% extends 'base.html' %}
+{% block content %}
+    <h2>{{student.name}}</h2>
+    <p> Date of Birth: {{student.dob}}</p>
+    <p>Experience: {{student.experience}}</p>
+    <p>Course enrolled: {{student.course.title}}</p>
+{% endblock content %}

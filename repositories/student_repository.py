@@ -53,3 +53,4 @@ def delete(id):
 # def delete_all():
 #     sql = "DELETE FROM students"
 #     run_sql(sql)
+

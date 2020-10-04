@@ -27,6 +27,12 @@ def create_student():
     course_id = course_repository.select(course_id)
 
     student = Student(name, dob, experience, course_id)
-    
+
     student_repository.save(student)
     return redirect("/students")
+
+@student_blueprint.route("/students/<id>")
+def show(id):
+    student = student_repository.select(id)
+    return render_template("students/show.html", student=student)
+
