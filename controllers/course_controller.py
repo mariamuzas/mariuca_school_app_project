@@ -50,8 +50,12 @@ def update_course(id):
     duration = request.form["duration"]
     max_num_students = request.form["max_num_students"]
 
-#     course_to_update = Course(title, description, date, duration, max_num_students, id)
+    course_to_update = Course(title, description, date, duration, max_num_students, id)
 
-#     course_repository.update(course_to_update)
-#     return redirect("/courses/<id>")
+    course_repository.update(course_to_update)
+    return redirect("/courses/<id>")
 
+@courses_blueprint.route("/courses/<id>/delete", methods=["POST"])
+def delete_course(id):
+    course_repository.delete(id)
+    return redirect("/courses")
