@@ -3,16 +3,26 @@
 {% block content %}
 
     <h2>List of Students</h2>
-    {% for student in students %}
-        <section>
-            <h3>{{student.name}}</h3>
-            <ul>
-                <li>Experience: {{student.experience}}</li>
-                <li>Membership: </li>
-            </ul>
-            <a href="/students/{{ student.id }}">Details</a>
-        </section>
-        
-    {% endfor %}
+<hr>
+    <table>
+        <thead>
+            <tr>
+                <th colspan="5">Students</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Name:</td>
+                <td>DOB:</td>
+                <td>Experience:</td>
+            </tr>
+            {% for student in students %}
+            <tr>
+                <td>{{student.name}}</td>
+                <td>{{student.dob}}</td>
+                <td>{{student.experience}}</td>
+                <td><a href="/students/{{student.id}}">More details</a></td>
+            </tr>
+            {% endfor %}
     
 {% endblock content %}
