@@ -36,10 +36,11 @@ def show(id):
     student = student_repository.select(id)
     return render_template("students/show.html", student=student)
 
-@student_blueprint.route("/students/<id>/edit")
-def edit_student(id):
-    student = student_repository.select(id)
-    
+@student_blueprint.route("/students/<id>/delete", methods=["POST"])
+def delete_student(id):
+    student_repository.delete(id)
+    return redirect("/students")
+
 # @courses_blueprint.route("/courses/<id>/edit")
 # def edit_course(id):
 #     course = course_repository.select(id)

@@ -34,8 +34,6 @@ def show(id):
     students = course_repository.students(course)
     return render_template("courses/show.html", course=course, students=students)
 
-# @update and edit don't work! : list index error
-
 @courses_blueprint.route("/courses/<id>/edit")
 def edit_course(id):
     course = course_repository.select(id)

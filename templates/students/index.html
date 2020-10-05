@@ -12,7 +12,9 @@
             </ul>
             <a href="/students/{{ student.id }}">Details</a>
             <a href="">Edit</a>
-            <a href="">Delete</a>
+            <form action="/students/{{student.id}}/delete" method="POST">
+                <input type="submit" value="delete">
+            </form>
         </section>
         
     {% endfor %}
