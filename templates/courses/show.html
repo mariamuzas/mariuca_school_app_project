@@ -2,9 +2,10 @@
 {% block content %}
 
     <h2>{{course.title}}</h2>
-    <p>{{course.description}}</p>
-    <p>{{course.date}}</p>
-    <p>{{course.duration}}h</p>
+    <p>Description: {{course.description}}</p>
+    <p>Day and time: {{course.date}}</p>
+    <p>Duration: {{course.duration}}h</p>
+    <p>Max. number of students: {{course.max_num_students}}</p>
     <ul>
         Students list: 
         {% for student in students %}

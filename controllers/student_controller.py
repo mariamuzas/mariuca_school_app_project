@@ -1,6 +1,7 @@
 from flask import Blueprint, Flask, redirect, render_template, request
 
 from models.student import Student
+from models.registration import Registration
 
 import repositories.student_repository as student_repository
 import repositories.course_repository as course_repository
@@ -25,12 +26,13 @@ def create_student():
     experience = request.form["experience"]
     course_id = request.form["course_id"]
 
-    course_id = course_repository.select(course_id)
+    course = course_repository.select(course_id)
+    new_student = Student(name, dob, experience)
+    new_registration = Registration(course, new_student)
 
-    student = Student(name, dob, experience, course_id)
-
-    student_repository.save(student)
-    return redirect(f"/students/{student.id}")
+    student_repository.save(new_student)
+    registration_repository.save(new_registration)
+    return redirect(f"/students/{new_student.id}")
 
 @student_blueprint.route("/students/<id>")
 def show(id):
@@ -57,6 +59,6 @@ def update_student(id):
     course_id = request.form["course_id"]
 
     course = course_repository.select(course_id)
-    student_to_update = Student(name, dob, experience, course, id)
+    student_to_update = Student(name, dob, experience, id)
     student_repository.update(student_to_update)
     return redirect(f"/students/{student_to_update.id}")
