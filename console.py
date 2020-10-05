@@ -7,7 +7,6 @@ import repositories.course_repository as course_repository
 
 student_repository.delete_all()
 course_repository.delete_all()
-# they are triggering an index error, not sure why.
 
 course_1 = Course('Introduction to Bakery', 'Learn how to bake from scratch', 'Thursdays at 16pm', 2, 15)
 course_repository.save(course_1)

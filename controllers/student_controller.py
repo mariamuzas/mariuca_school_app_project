@@ -41,22 +41,21 @@ def delete_student(id):
     student_repository.delete(id)
     return redirect("/students")
 
-# @courses_blueprint.route("/courses/<id>/edit")
-# def edit_course(id):
-#     course = course_repository.select(id)
-#     student = course_repository.students(course)
-#     return render_template('courses/edit.html', course=course)
+@student_blueprint.route("/students/<id>/edit")
+def edit_student(id):
+    courses = course_repository.select_all()
+    student = student_repository.select(id)
+    return render_template('students/edit.html', student= student, courses=courses)
 
-# @courses_blueprint.route("/courses/<id>", methods=["POST"])
-# def update_course(id):
-#     title = request.form["title"]
-#     description = request.form ["description"]
-#     date = request.form["date"]
-#     duration = request.form["duration"]
-#     max_num_students = request.form["max_num_students"]
+@student_blueprint.route("/students/<id>", methods=["POST"])
+def update_student(id):
+    name = request.form["name"]
+    dob = request.form["dob"]
+    experience = request.form["experience"]
+    course_id = request.form["course_id"]
 
-#     course_to_update = Course(title, description, date, duration, max_num_students, id)
-
-#     course_repository.update(course_to_update)
-#     return redirect("/courses/<id>")
+    course = course_repository.select(course_id)
+    student_to_update = Student(name, dob, experience, course, id)
+    student_repository.update(student_to_update)
+    return redirect("/students")
 
