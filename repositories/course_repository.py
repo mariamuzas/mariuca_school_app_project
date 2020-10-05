@@ -49,16 +49,3 @@ def update(course):
     sql = "UPDATE courses SET (title, description, date, duration, max_num_students, teacher_name) = (%s, %s, %s, %s, %s, %s) WHERE id = %s"
     values = [course.title, course.description, course.date, course.duration, course.max_num_students, course.teacher_name, course.id]
     run_sql(sql, values)
-
-
-# def students(course):
-#     students = []
-
-#     sql = "SELECT * FROM students WHERE course_id = %s"
-#     values = [course.id]
-#     results = run_sql(sql, values)
-
-#     for row in results: 
-#         student = Student(row['name'], row['dob'], row['experience'], row['course_id'], row['id'])
-#         students.append(student)
-#     return students

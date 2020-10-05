@@ -11,22 +11,22 @@ student_repository.delete_all()
 course_repository.delete_all()
 registration_repository.delete_all()
 
-course_1 = Course('Introduction to Bakery', 'Learn how to bake from scratch', 'Thursdays at 16pm', 2, 15, "Maria Antuna")
+course_1 = Course('Introduction to Bakery', 'Learn how to bake from scratch', 'Thursdays at 16:00', 2, 15, "Maria Antuna")
 course_repository.save(course_1)
 
-course_2 = Course('All I want for Christmas is food', 'Christmas Dinner Recipes', 'Saturdays at 10pm', 2, 10,'Maria Antuna')
+course_2 = Course('All I want for Christmas is food', 'Christmas Dinner Recipes', 'Saturdays at 10:00', 2, 10,'Maria Antuna')
 course_repository.save(course_2)
 
-course_3 = Course("Salads aren't boring", 'Vegetarian recipes that you never thought about', 'Tuesdays at 17pm', 1, 15, 'Berasategui')
+course_3 = Course("Salads aren't boring", 'Vegetarian recipes that you never thought about', 'Tuesdays at 17:00', 1, 15, 'Berasategui')
 course_repository.save(course_3)
 
-student_1 = Student('Valerie Liberty', '10/04/1980', 'Intermediate', course_3)
+student_1 = Student('Valerie Liberty', '10/04/1980', 'Intermediate', "vliberty@gmail.com", '7852341700', True)
 student_repository.save(student_1)
 
-student_2 = Student('Marco Botton', '07/07/1977', 'Beginner', course_2)
+student_2 = Student('Marco Botton', '07/07/1977', 'Beginner', "bottonmarco@gmail.com", '7284932045', False)
 student_repository.save(student_2)
 
-student_3 = Student('Alex Mateo', '12/09/1950', 'Advance', course_1)
+student_3 = Student('Alex Mateo', '12/09/1950', 'Advance', "mate0300",'7430328501', True )
 student_repository.save(student_3)
 
 registration_1 = Registration(course_1, student_1)

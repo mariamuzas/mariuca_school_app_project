@@ -4,8 +4,8 @@ from models.course import Course
 import repositories.course_repository as course_repository
 
 def save(student):
-    sql = "INSERT INTO students(name, dob, experience) VALUES ( %s, %s, %s ) RETURNING id"
-    values = [ student.name, student.dob, student.experience ]
+    sql = "INSERT INTO students(name, dob, experience, email, phone, membership) VALUES ( %s, %s, %s, %s, %s, %s ) RETURNING id"
+    values = [ student.name, student.dob, student.experience, student.email, student.phone, student.membership ]
     results = run_sql( sql, values )
     student.id = results[0]['id']
     return student
@@ -18,7 +18,7 @@ def select_all():
     results = run_sql(sql)
 
     for row in results:
-        student = Student(row['name'], row['dob'], row['experience'], row['id'])
+        student = Student(row['name'], row['dob'], row['experience'], row['email'], row['phone'], row['membership'], row['id'] )
         students.append(student)
     return students
 
@@ -30,7 +30,7 @@ def select(id):
     result = run_sql(sql, values)[0]
 
     if result is not None:
-        student = Student(result['name'], result['dob'], result['experience'], result['id'])
+        student = Student(result['name'], result['dob'], result['experience'], result['email'], result['phone'], result['membership'], result['id'])
     return student
 
 
@@ -41,8 +41,8 @@ def delete(id):
 
 
 def update(student):
-    sql = "UPDATE students SET (name, dob, experience) = (%s, %s, %s) WHERE id = %s"
-    values = [student.name, student.dob, student.experience, student.id]
+    sql = "UPDATE students SET (name, dob, experience, email, phone, membership) = (email, phone, membership, email, phone, membership) WHERE id = %s"
+    values = [student.name, student.dob, student.experience, student.email, student.phone, student.membership, student.id]
     run_sql(sql, values)
 
 

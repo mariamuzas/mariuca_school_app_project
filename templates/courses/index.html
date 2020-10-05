@@ -11,18 +11,18 @@
             <tr>
                 <td>Course:</td>
                 <td>Date:</td>
-                <td>Duration</td>
-                <td>N. Students:</td>
+                <td>Max. Capacity:</td>
                 <td>Teacher:</td>
                 <td>Availability:</td>
+                <td></td>
             </tr>
             {% for course in courses %}
             <tr>
                 <td>{{course.title}}</td>
                 <td>{{course.date}}</td>
-                <td>{{course.duration}}h</td>
                 <td>{{course.max_num_students}}</td>
                 <td>{{course.teacher_name}}</td>
+                <td></td>
                 <td><a href="/courses/{{ course.id}}">More details</a></td>
             </tr>
             {% endfor %}

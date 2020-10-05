@@ -24,10 +24,13 @@ def create_student():
     name = request.form["name"]
     dob = request.form["dob"]
     experience = request.form["experience"]
+    email = request.form["email"]
+    phone = request.form['phone']
+    membership= request.form["membership"]
     course_id = request.form["course_id"]
 
     course = course_repository.select(course_id)
-    new_student = Student(name, dob, experience)
+    new_student = Student(name, dob, experience, email, phone, membership)
     new_registration = Registration(course, new_student)
 
     student_repository.save(new_student)
@@ -56,9 +59,15 @@ def update_student(id):
     name = request.form["name"]
     dob = request.form["dob"]
     experience = request.form["experience"]
+    email = request.form["email"]
+    phone = request.form['phone']
+    membership= request.form["membership"]
     course_id = request.form["course_id"]
 
     course = course_repository.select(course_id)
-    student_to_update = Student(name, dob, experience, id)
+    student_to_update = Student(name, dob, experience, email, phone, membership, id)
+    new_registration = Registration(course, student_to_update)
+
     student_repository.update(student_to_update)
+    registration_repository.save(new_registration)
     return redirect(f"/students/{student_to_update.id}")

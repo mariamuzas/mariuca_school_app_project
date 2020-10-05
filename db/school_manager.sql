@@ -15,9 +15,12 @@ CREATE TABLE courses (
 CREATE TABLE students(
     id SERIAL PRIMARY KEY,
     name VARCHAR(255),
-    dob VARCHAR(255),
-    experience VARCHAR(255)
-); 
+    dob DATE,
+    experience VARCHAR(255),
+    email VARCHAR(255),
+    phone VARCHAR(255), 
+    membership BOOLEAN
+);
 
 CREATE TABLE registrations(
     id SERIAL PRIMARY KEY, 

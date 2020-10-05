@@ -14,13 +14,18 @@
             <tr>
                 <td>Name:</td>
                 <td>DOB:</td>
-                <td>Experience:</td>
+                <td>Level:</td>
+                <td>Email:</td>
+                <td>Membership:</td>
             </tr>
             {% for student in students %}
             <tr>
                 <td>{{student.name}}</td>
                 <td>{{student.dob}}</td>
                 <td>{{student.experience}}</td>
+                <td>{{student.email}}</td>
+                <td>{{student.membership}}</td>
+
                 <td><a href="/students/{{student.id}}">More details</a></td>
             </tr>
             {% endfor %}

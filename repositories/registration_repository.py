@@ -52,7 +52,7 @@ def student(registration):
     values = [registration.student.id]
     results = run_sql(sql, values)[0]
 
-    student = Student(results['name'], results['dob'], results['experience'], results['course_id'], results['id']) 
+    student = Student(results['name'], results['dob'], results['experience'], results['email'], results['phone'], results['membership'], results['id']) 
     return student
 
 def select_courses(id):
@@ -73,6 +73,11 @@ def select_students(id):
     results =run_sql(sql, values)
     
     for row in results:
-        student = Student(row['name'], row['dob'], row['experience'], row['id'])
+        student = Student(row['name'], row['dob'], row['experience'], row['email'], row['phone'], row['membership'], row['id'])
         students.append(student)
     return students
+
+# def update(registration):
+#     sql = "UPDATE registration SET (course_id, student_id) = (%s, %s) WHERE id = %s"
+#     values = [registration.course.id, registration.student.id, registration.id]
+#     run_sql(sql, values)
