@@ -5,8 +5,8 @@ from models.student import Student
 import repositories.student_repository as student_repository
 
 def save(course):
-    sql = "INSERT INTO courses ( title, description, date, duration, max_num_students ) VALUES ( %s, %s, %s, %s, %s ) RETURNING id"
-    values = [ course.title, course.description, course.date, course.duration, course.max_num_students ]
+    sql = "INSERT INTO courses ( title, description, date, duration, max_num_students, teacher_name) VALUES ( %s, %s, %s, %s, %s, %s ) RETURNING id"
+    values = [ course.title, course.description, course.date, course.duration, course.max_num_students, course.teacher_name]
     results = run_sql( sql, values )
     course.id = results[0]['id']
     return course
@@ -19,7 +19,7 @@ def select_all():
     results = run_sql(sql)
 
     for row in results:
-        course = Course(row['title'], row['description'], row['date'], row['duration'], row['max_num_students'], row['id'])
+        course = Course(row['title'], row['description'], row['date'], row['duration'], row['max_num_students'], row['teacher_name'], row['id'])
         courses.append(course)
     return courses
 
@@ -31,7 +31,7 @@ def select(id):
     result = run_sql(sql, values)[0]
 
     if result is not None:
-        course = Course(result['title'], result['description'], result['date'], result['duration'], result['max_num_students'], result['id'])
+        course = Course(result['title'], result['description'], result['date'], result['duration'], result['max_num_students'], result['teacher_name'], result['id'])
     return course
 
 def delete(id):
@@ -46,8 +46,8 @@ def delete_all():
 
 
 def update(course):
-    sql = "UPDATE courses SET (title, description, date, duration, max_num_students) = (%s, %s, %s, %s, %s) WHERE id = %s"
-    values = [course.title, course.description, course.date, course.duration, course.max_num_students, course.id]
+    sql = "UPDATE courses SET (title, description, date, duration, max_num_students, teacher_name) = (%s, %s, %s, %s, %s, %s) WHERE id = %s"
+    values = [course.title, course.description, course.date, course.duration, course.max_num_students, course.teacher_name, course.id]
     run_sql(sql, values)
 
 

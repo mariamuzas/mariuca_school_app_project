@@ -21,12 +21,13 @@ def create_course():
     date = request.form["date"]
     duration = request.form["duration"]
     max_num_students = request.form["max_num_students"]
+    teacher_name = request.form["teacher_name"]
 
-    course = Course(title, description, date, duration, max_num_students)
+    course = Course(title, description, date, duration, max_num_students, teacher_name)
 
     course_repository.save(course)
 
-    return redirect("/courses")
+    return redirect(f"/courses/{course.id}")
 
 @courses_blueprint.route("/courses/<id>")
 def show(id):
@@ -47,8 +48,9 @@ def update_course(id):
     date = request.form["date"]
     duration = request.form["duration"]
     max_num_students = request.form["max_num_students"]
+    teacher_name = request.form["teacher_name"]
 
-    course_to_update = Course(title, description, date, duration, max_num_students, id)
+    course_to_update = Course(title, description, date, duration, max_num_students, teacher_name, id)
     course_repository.update(course_to_update)
     return redirect(f"/courses/{course_to_update.id}")
 

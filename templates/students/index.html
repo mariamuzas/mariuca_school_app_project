@@ -11,10 +11,6 @@
                 <li>Membership: </li>
             </ul>
             <a href="/students/{{ student.id }}">Details</a>
-            <a href="/students/{{student.id}}/edit">Edit</a>
-            <form action="/students/{{student.id}}/delete" method="POST">
-                <input type="submit" value="delete">
-            </form>
         </section>
         
     {% endfor %}

@@ -29,7 +29,7 @@ def create_student():
     student = Student(name, dob, experience, course_id)
 
     student_repository.save(student)
-    return redirect("/students")
+    return redirect(f"/students/{student.id}")
 
 @student_blueprint.route("/students/<id>")
 def show(id):
@@ -57,5 +57,4 @@ def update_student(id):
     course = course_repository.select(course_id)
     student_to_update = Student(name, dob, experience, course, id)
     student_repository.update(student_to_update)
-    return redirect("/students")
-
+    return redirect(f"/students/{student_to_update.id}")

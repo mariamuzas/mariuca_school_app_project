@@ -10,5 +10,9 @@
             <li>{{student.name}}</li>
         {% endfor %}
     </ul>
-
+    <a href="/courses/{{ course.id }}/edit">Edit</a>
+            
+    <form action="/courses/{{ course.id}}/delete" method="POST">
+        <input type="submit" value="delete">
+    </form>
 {% endblock content %}

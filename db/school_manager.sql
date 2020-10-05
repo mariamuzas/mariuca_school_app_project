@@ -1,7 +1,5 @@
-DROP TABLE bookings;
 DROP TABLE students;
 DROP TABLE courses;
-
 
 CREATE TABLE courses (
     id SERIAL PRIMARY KEY, 
@@ -9,7 +7,8 @@ CREATE TABLE courses (
     description VARCHAR(255),
     date VARCHAR(255),
     duration INT,
-    max_num_students INT
+    max_num_students INT,
+    teacher_name VARCHAR(255)
 );
 
 CREATE TABLE students(
@@ -18,10 +17,4 @@ CREATE TABLE students(
     dob VARCHAR(255),
     experience VARCHAR(255), 
     course_id INT REFERENCES courses(id) ON DELETE CASCADE
-);
-
-CREATE TABLE bookings(
-    id SERIAL PRIMARY KEY,
-    course_id  SERIAL REFERENCES courses(id) ON DELETE CASCADE,
-    student_id SERIAL REFERENCES students(id) ON DELETE CASCADE
-);
+)

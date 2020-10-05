@@ -4,4 +4,9 @@
     <p> Date of Birth: {{student.dob}}</p>
     <p>Experience: {{student.experience}}</p>
     <p>Course enrolled: {{student.course.title}}</p>
+    <!-- <a href="/students/{{ student.id }}">Details</a> -->
+    <a href="/students/{{student.id}}/edit">Edit</a>
+    <form action="/students/{{student.id}}/delete" method="POST">
+        <input type="submit" value="delete">
+    </form>
 {% endblock content %}

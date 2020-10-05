@@ -1,20 +1,31 @@
 {% extends 'base.html' %}
 {% block content %}
-    <h2>List of Courses</h2>
-    {% for course in courses %}
-        <section>
-            <h3>{{course.title}}</h3>
-            <ul>
-                <li>Date: {{course.date}}</li>
-                <li>{{course.duration}}hours</li>
-            </ul>
-        
-            <a href="/courses/{{ course.id}}">Details</a>
-            <a href="/courses/{{ course.id }}/edit">Edit</a>
-            
-            <form action="/courses/{{ course.id}}/delete" method="POST">
-                <input type="submit" value="delete">
-            </form>
-        </section>
-    {% endfor %}
+<hr>
+    <table>
+        <thead>
+            <tr>
+                <th colspan="5">Courses</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Course:</td>
+                <td>Date:</td>
+                <td>Duration</td>
+                <td>N. Students:</td>
+                <td>Teacher:</td>
+                <td>Availability:</td>
+            </tr>
+            {% for course in courses %}
+            <tr>
+                <td>{{course.title}}</td>
+                <td>{{course.date}}</td>
+                <td>{{course.duration}}h</td>
+                <td>{{course.max_num_students}}</td>
+                <td>{{course.teacher_name}}</td>
+                <td><a href="/courses/{{ course.id}}">More details</a></td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
 {% endblock content %}
