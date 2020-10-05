@@ -5,9 +5,10 @@
     <p>{{course.description}}</p>
     <p>{{course.date}}</p>
     <p>{{course.duration}}h</p>
-    <ul>Students in the course:
+    <ul>
+        Students list: 
         {% for student in students %}
-            <li>{{student.name}}</li>
+        <li>{{student.name}}</li>
         {% endfor %}
     </ul>
     <a href="/courses/{{ course.id }}/edit">Edit</a>

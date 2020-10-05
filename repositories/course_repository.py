@@ -51,14 +51,14 @@ def update(course):
     run_sql(sql, values)
 
 
-def students(course):
-    students = []
+# def students(course):
+#     students = []
 
-    sql = "SELECT * FROM students WHERE course_id = %s"
-    values = [course.id]
-    results = run_sql(sql, values)
+#     sql = "SELECT * FROM students WHERE course_id = %s"
+#     values = [course.id]
+#     results = run_sql(sql, values)
 
-    for row in results: 
-        student = Student(row['name'], row['dob'], row['experience'], row['course_id'], row['id'])
-        students.append(student)
-    return students
+#     for row in results: 
+#         student = Student(row['name'], row['dob'], row['experience'], row['course_id'], row['id'])
+#         students.append(student)
+#     return students

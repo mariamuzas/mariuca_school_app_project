@@ -16,8 +16,7 @@ CREATE TABLE students(
     id SERIAL PRIMARY KEY,
     name VARCHAR(255),
     dob VARCHAR(255),
-    experience VARCHAR(255), 
-    course_id INT REFERENCES courses(id) ON DELETE CASCADE
+    experience VARCHAR(255)
 ); 
 
 CREATE TABLE registrations(

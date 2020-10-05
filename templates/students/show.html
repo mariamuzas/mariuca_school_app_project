@@ -3,7 +3,13 @@
     <h2>{{student.name}}</h2>
     <p> Date of Birth: {{student.dob}}</p>
     <p>Experience: {{student.experience}}</p>
-    <p>Course enrolled: {{student.course.title}}</p>
+
+    <ul>
+        Courses enrolled: 
+        {% for course in courses %}
+        <li>{{course.title}}</li>
+        {% endfor %}
+    </ul>
     <a href="/students/{{student.id}}/edit">Edit</a>
     <form action="/students/{{student.id}}/delete" method="POST">
         <input type="submit" value="delete">

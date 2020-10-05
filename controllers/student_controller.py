@@ -4,6 +4,7 @@ from models.student import Student
 
 import repositories.student_repository as student_repository
 import repositories.course_repository as course_repository
+import repositories.registration_repository as registration_repository
 
 student_blueprint = Blueprint("students", __name__)
 
@@ -34,7 +35,8 @@ def create_student():
 @student_blueprint.route("/students/<id>")
 def show(id):
     student = student_repository.select(id)
-    return render_template("students/show.html", student=student)
+    courses = registration_repository.select_courses(id)
+    return render_template("students/show.html", student=student, courses= courses)
 
 @student_blueprint.route("/students/<id>/delete", methods=["POST"])
 def delete_student(id):

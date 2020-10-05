@@ -2,7 +2,7 @@ from flask import Blueprint, Flask, redirect, render_template, request
 
 from models.course import Course
 import repositories.course_repository as course_repository
-
+import repositories.registration_repository as registration_repository
 courses_blueprint = Blueprint("courses", __name__)
 
 @courses_blueprint.route("/courses")
@@ -32,13 +32,12 @@ def create_course():
 @courses_blueprint.route("/courses/<id>")
 def show(id):
     course = course_repository.select(id)
-    students = course_repository.students(course)
+    students = registration_repository.select_students(id)
     return render_template("courses/show.html", course=course, students=students)
 
 @courses_blueprint.route("/courses/<id>/edit")
 def edit_course(id):
     course = course_repository.select(id)
-    student = course_repository.students(course)
     return render_template('courses/edit.html', course=course)
 
 @courses_blueprint.route("/courses/<id>", methods=["POST"])
