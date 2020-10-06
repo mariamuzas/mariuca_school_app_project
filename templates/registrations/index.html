@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% block content %}
+    <h2>List of registrations</h2>
+    <table>
+        <thead>
+            <tr>
+                <th colspan="5">Registrations</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>id</td>
+                <td>Course</td>
+                <td>Student:</td>
+            </tr>
+          {% for registration in registrations %}
+              <tr>
+                  <td>{{registration.id}}</td>
+                  <td>{{registration.course.title}}</td>
+                  <td>{{registration.student.name}}</td>
+                  <td><a href="/registrations/{{registration.id}}/edit">Edit</a></td>
+                  <td><form action="/registrations/{{registration.id}}/delete" method="POST">
+                    <input type="submit" value="delete">
+                    </form></td>
+              </tr>
+          {% endfor %}
+{% endblock content %}

@@ -3,6 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Prata&display=swap" rel="stylesheet">
+    <!-- <link rel="stylesheet" href="static/style.css"> -->
+    <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}">
+    
     <title>Mariuca School</title>
 </head>
 <body>
@@ -12,7 +16,7 @@
             <li><a href="{{url_for('home')}}">Home</a></li>
             <li><a href="{{ url_for('students.list_students')}}">Students</a></li>
             <li><a href="{{ url_for('courses.list_courses')}}">Courses</a></li>
-            <!-- <li><a href="">Bookings</a></li> -->
+            <li><a href="{{ url_for('registration.list_registrations')}}">Registrations</a></li>
         </ul>
     </nav>
     {% block content %}

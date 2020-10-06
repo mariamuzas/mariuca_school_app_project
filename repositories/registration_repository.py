@@ -77,7 +77,18 @@ def select_students(id):
         students.append(student)
     return students
 
-# def update(registration):
-#     sql = "UPDATE registration SET (course_id, student_id) = (%s, %s) WHERE id = %s"
-#     values = [registration.course.id, registration.student.id, registration.id]
-#     run_sql(sql, values)
+def select(id):
+    registration = None
+    sql = "SELECT * FROM registrations WHERE id = %s"
+    values = [id]
+    result = run_sql(sql, values)[0]
+
+    if result is not None:
+        registration = Registration(result['course_id'], result['student_id'])
+    return registration
+
+
+def update(registration):
+    sql = "UPDATE registrations SET (course_id, student_id) = (%s, %s) WHERE id = %s"
+    values = [registration.course.id, registration.student.id, registration.id]
+    run_sql(sql, values)

@@ -2,11 +2,13 @@ from flask import Flask, render_template
 
 from controllers.course_controller import courses_blueprint
 from controllers.student_controller import student_blueprint
+from controllers.registration_controller import registration_blueprint
 
 app = Flask(__name__)
 
 app.register_blueprint(courses_blueprint)
 app.register_blueprint(student_blueprint)
+app.register_blueprint(registration_blueprint)
 
 @app.route("/")
 def home():

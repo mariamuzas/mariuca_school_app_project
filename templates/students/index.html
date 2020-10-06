@@ -24,8 +24,10 @@
                 <td>{{student.dob}}</td>
                 <td>{{student.experience}}</td>
                 <td>{{student.email}}</td>
-                <td>{{student.membership}}</td>
-
+                <!-- <td>{{student.membership}}</td> -->
+                <td>{% if student.membership == True %}
+                    <i class="fa fa-check fa-2x" style="color:black"></i>
+                {% endif %}</td>
                 <td><a href="/students/{{student.id}}">More details</a></td>
             </tr>
             {% endfor %}

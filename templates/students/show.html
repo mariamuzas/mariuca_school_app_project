@@ -12,11 +12,11 @@
     <ul>
         Courses enrolled: 
         {% for course in courses %}
-        <li>{{course.title}}</li>
+        <li>{{course.title}} <a href="{{ url_for('registration.list_registrations')}}">(Change/delete course)</a></li>
         {% endfor %}
     </ul>
-    <a href="/students/{{student.id}}/edit">Edit</a>
+    <a href="/students/{{student.id}}/edit">Edit student details</a>
     <form action="/students/{{student.id}}/delete" method="POST">
-        <input type="submit" value="delete">
+        <input type="submit" value="Delete Student">
     </form>
 {% endblock content %}

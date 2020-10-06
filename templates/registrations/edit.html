@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block content %}
+
+    <p>{{registration.student.name}}</p>
+    <form action="/registrations/{{registration.id}}" method="POST">
+        <div>
+            <label for="student_id">Name</label>
+            <select name="student_id" id="student_id" >
+                {% for student in students %}
+                <option value="{{registration.student}}"> {{ student.name}}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <div>
+            <label for="course_id">Registration to a new course:</label>
+            <select name="course_id" id="course_id" >
+                {% for course in courses %}
+                <option value="{{registration.course}}"> {{ course.title }}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <input type="submit" value="Save Changes">
+    </form>
+
+{% endblock content %}
