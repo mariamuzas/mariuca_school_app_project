@@ -7,7 +7,7 @@
             <label for="student_id">Name</label>
             <select name="student_id" id="student_id" >
                 {% for student in students %}
-                <option value="{{registration.student}}"> {{ student.name}}</option>
+                <option value="{{student.id}}"> {{ student.name}}</option>
                 {% endfor %}
             </select>
         </div>
@@ -15,7 +15,7 @@
             <label for="course_id">Registration to a new course:</label>
             <select name="course_id" id="course_id" >
                 {% for course in courses %}
-                <option value="{{registration.course}}"> {{ course.title }}</option>
+                <option value="{{course.id}}"> {{ course.title }}</option>
                 {% endfor %}
             </select>
         </div>

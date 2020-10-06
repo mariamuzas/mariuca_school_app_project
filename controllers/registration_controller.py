@@ -38,6 +38,6 @@ def update_registration(id):
     course = course_repository.select(course_id)
     student= student_repository.select(student_id)
 
-    registration_to_update = Registration(course, student)
+    registration_to_update = Registration(course, student, id)
     registration_repository.update(registration_to_update)
     return redirect("/registrations")

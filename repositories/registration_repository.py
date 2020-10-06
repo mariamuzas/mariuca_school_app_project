@@ -84,7 +84,7 @@ def select(id):
     result = run_sql(sql, values)[0]
 
     if result is not None:
-        registration = Registration(result['course_id'], result['student_id'])
+        registration = Registration(result['course_id'], result['student_id'], result['id'])
     return registration
 
 
