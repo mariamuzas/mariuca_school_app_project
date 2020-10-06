@@ -1,11 +1,94 @@
 body {
-    font-family: 'Prata', serif;
+    margin: 0;
+    cursor: pointer;
 }
-nav {
+
+#header_title{
+    font-family: 'Prata', serif;
+    margin: 2vh;
+    text-align: center;
+}
+.menu {
     display: flex;
     justify-content: space-between;
-    padding: 10px;
+    align-items: center;
+    background-color: #8EAEBD;
+    margin: 0;
+    padding: 0;
+    font-family: 'Prata', serif;
 }
-nav li {
-    flex-direction: row;
+nav > ul {
+    display: flex;
+    flex-flow: row nowrap;
+}
+
+.home_button{
+    margin-right: 5vw;
+}
+nav > ul > li {
+    list-style: none;
+    border: 2px solid;
+    border-radius: 7%;
+    padding: 2px 5px;
+    margin-left: 20px;
+}
+
+nav > ul> li > a{
+    color:black;
+}
+
+a {
+    text-decoration: none;
+}
+
+.welcome {
+    display: flex;
+    justify-content: center;
+    padding-top: 20px;
+}
+
+#index_buttons{
+    display: flex;
+    justify-content: space-around;
+    padding-top: 40px;
+}
+.student_buttons, .course_buttons{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border: solid;
+    border-radius: 3%;
+}
+.student_buttons > button, .course_buttons > button {
+    margin: 40px;
+    padding: 30px 30px;
+    font-size: 120%;
+    border-radius: 3%;
+}
+
+table{
+    margin: 5% 5%;
+    border-collapse: collapse;
+    width: 80%;
+}
+table, th, td{
+    border: 1px solid black;
+}
+.details{
+    font-size: 14px;
+}
+
+.delete_button{
+    outline: none;
+    background-color: white;
+    border: 0;
+}
+.header_table{
+   font-weight: bold;
+   text-align: center;
+}
+thead {
+    font-weight: bold;
+    font-size: 120%;
+    font-family: 'Prata', serif;
 }

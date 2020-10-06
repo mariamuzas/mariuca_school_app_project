@@ -2,16 +2,14 @@
 
 {% block content %}
 
-    <h2>List of Students</h2>
-<hr>
     <table>
         <thead>
             <tr>
-                <th colspan="5">Students</th>
+                <th colspan="5">List of Students</th>
             </tr>
         </thead>
         <tbody>
-            <tr>
+            <tr class="header_table">
                 <td>Name:</td>
                 <td>DOB:</td>
                 <td>Level:</td>
@@ -24,11 +22,11 @@
                 <td>{{student.dob}}</td>
                 <td>{{student.experience}}</td>
                 <td>{{student.email}}</td>
-                <!-- <td>{{student.membership}}</td> -->
-                <td>{% if student.membership == True %}
-                    <i class="fa fa-check fa-2x" style="color:black"></i>
-                {% endif %}</td>
-                <td><a href="/students/{{student.id}}">More details</a></td>
+                <td>{{student.membership}}</td>
+                <!-- <td>{% if student.membership == True %}
+                    <i class="fa fa-check fa-2x" style="color:black"></i> -->
+                <!-- {% endif %}</td> -->
+                <td class="details"><a href="/students/{{student.id}}">More details</a></td>
             </tr>
             {% endfor %}
     

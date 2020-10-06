@@ -1,20 +1,18 @@
 {% extends 'base.html' %}
 {% block content %}
-<hr>
     <table>
         <thead>
             <tr>
-                <th colspan="5">Courses</th>
+                <th colspan="5">List of Courses</th>
             </tr>
         </thead>
         <tbody>
-            <tr>
+            <tr class="header_table">
                 <td>Course:</td>
                 <td>Date:</td>
                 <td>Max. Capacity:</td>
                 <td>Teacher:</td>
                 <td>Availability:</td>
-                <td></td>
             </tr>
             {% for course in courses %}
             <tr>
@@ -23,7 +21,7 @@
                 <td>{{course.max_num_students}}</td>
                 <td>{{course.teacher_name}}</td>
                 <td></td>
-                <td><a href="/courses/{{ course.id}}">More details</a></td>
+                <td class="details"><a href="/courses/{{ course.id}}">More details</a></td>
             </tr>
             {% endfor %}
         </tbody>
