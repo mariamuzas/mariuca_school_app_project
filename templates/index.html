@@ -2,7 +2,7 @@
 {% block content %}
 <div class="home_page">
     <div class="welcome">
-        <p>Welcome to Mariuca's School Students & Classes manager. </p>
+        <q><cite> Chefs don't make mistakes; they make new dishes.</cite> </q> <p>- Elizabeth Briggs</p> 
     </div>
     <div id="index_buttons">
         <div class="student_buttons">
@@ -10,7 +10,7 @@
             <button class="index_student_bt"><a href="{{ url_for('students.list_students')}}">Student List</a></button>
         </div>
         <div class="course_buttons">
-            <button class="index_course_bt"><a href="{{ url_for('courses.new_course') }}">Create Course</a></button>
+            <button class="index_courses_bt"><a href="{{ url_for('courses.new_course') }}">Create Course</a></button>
             <button class="index_courses_bt"><a href="{{ url_for('courses.list_courses')}}">Upcoming Courses</a></button>
         </div>
     </div>

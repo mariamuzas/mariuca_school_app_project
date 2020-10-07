@@ -20,11 +20,12 @@
                   <td>{{registration.student.name}}</td>
                   <td class="details"><a href="/registrations/{{registration.id}}/edit">Edit</a></td>
                   <td class="details_delete"><form  action="/registrations/{{registration.id}}/delete" method="POST">
-                    <input class="delete_button" type="submit" value="Delete">
+                <input class="delete_button" type="submit" value="Delete">
                     </form></td>
               </tr>
+            {% endfor %}
         </tbody>
     </table>
 </section>
-          {% endfor %}
+          
 {% endblock content %}

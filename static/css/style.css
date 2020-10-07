@@ -1,5 +1,4 @@
 body {
-    /* height: 100vh; */
     margin: 0;
 }
 
@@ -10,7 +9,7 @@ body {
     background-position: center bottom;
 }
 header > .menu > .title > img {
-    width: 35%;
+    width: 40%;
 }
 
 .title {
@@ -19,8 +18,12 @@ header > .menu > .title > img {
 }
 
 #header_title{
+    display: inherit;
     font-family: 'Prata', serif;
+    padding-left: 3%;
+
 }
+
 .menu {
     display: flex;
     justify-content: space-around;
@@ -51,6 +54,7 @@ nav > ul > li {
 
 .nav_button{
     background-color: #931a25;
+    padding: 10px;
 }
 nav > ul> li > a{
     background-color: #931a25;
@@ -69,7 +73,7 @@ a {
 
 #index_buttons{
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
 }
 .student_buttons, .course_buttons{
     display: flex;
@@ -77,19 +81,20 @@ a {
     justify-content: center;
     /* border: solid; */
     border-radius: 3%;
-    padding: 15px;
 }
 
-.index_course_bt > a, .index_student_bt > a{
+.index_courses_bt > a, .index_student_bt > a{
     padding: 15px;
+    color: black;
 }
 
 .student_buttons > button, .course_buttons > button {
     margin: 40px;
-    padding: 30px 30px;
+    padding: 2.5rem;
     font-size: 120%;
     border-radius: 3%;
     width: inherit !important;
+    background-color: white;
 }
 
 /* styling for details_student details */

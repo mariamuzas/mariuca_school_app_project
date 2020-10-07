@@ -15,6 +15,25 @@ def list_registrations():
     registrations = registration_repository.select_all()
     return render_template('registrations/index.html', registrations = registrations)
 
+@registration_blueprint.route("/registrations/new")
+def new_registration():
+    students = student_repository.select_all()
+    courses = course_repository.select_all()
+    return render_template('registrations/new.html', students=students, courses=courses )
+
+
+@registration_blueprint.route("/registrations", methods=["POST"])
+def create_registration():
+    course_id = request.form["course_id"]
+    student_id = request.form["student_id"]
+
+    course = course_repository.select(course_id)
+    student= student_repository.select(student_id)
+
+    new_registration = Registration(course, student)
+    registration_repository.update(new_registration)
+    return redirect("/registrations")
+
 
 @registration_blueprint.route("/registrations/<id>/delete", methods= ["POST"])
 def delete_registration(id):
@@ -41,3 +60,6 @@ def update_registration(id):
     registration_to_update = Registration(course, student, id)
     registration_repository.update(registration_to_update)
     return redirect("/registrations")
+
+
+
