@@ -1,0 +1,41 @@
+.form_add_create_edit{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 10% !important;
+}
+
+form {
+    width: 50%;
+}
+
+.form_add_create_edit > .form_course {
+    width: 70% !important;
+}
+
+.form_add_create_edit > form > input, .column_form > input, select, button, textarea {
+    font-family: inherit;
+    font-size: 100%;
+    box-sizing: border-box;
+    margin:5px 0;
+    padding:6px;
+    border-radius:8px;
+    width:100%;
+  }
+
+.form_add_create_edit > .column_form {
+    display: flex;
+    flex-direction: column;
+}
+
+#description {
+    padding:15px;
+}
+
+.duration_date{
+    display: flex;
+    justify-content: space-between;
+}
+.duration_date > .column_form {
+    width: 48%;
+}

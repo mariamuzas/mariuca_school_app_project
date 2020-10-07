@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 
 {% block content %}
-
+<section class="index-table">
     <table>
         <thead>
             <tr>
@@ -22,12 +22,15 @@
                 <td>{{student.dob}}</td>
                 <td>{{student.experience}}</td>
                 <td>{{student.email}}</td>
-                <td>{{student.membership}}</td>
-                <!-- <td>{% if student.membership == True %}
-                    <i class="fa fa-check fa-2x" style="color:black"></i> -->
-                <!-- {% endif %}</td> -->
+                {% if student.membership == True %}
+                    <td class="check"><p class="check">&#10003</p></td>
+                {% else %}
+                    <td><p></p></td>
+                {% endif %}
                 <td class="details"><a href="/students/{{student.id}}">More details</a></td>
             </tr>
             {% endfor %}
-    
+    </tbody>
+    </table>
+</section>
 {% endblock content %}

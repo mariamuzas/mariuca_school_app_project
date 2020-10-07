@@ -1,0 +1,39 @@
+table {
+    padding-top: 40px;
+    border-collapse: collapse;
+    width: 80%;
+    margin: auto;
+}
+
+.index-table{
+    margin: auto;
+    padding-top: 10%;
+}
+
+table, th, td{
+    border: 1px solid black;
+}
+.details{
+    font-size: 14px;
+}
+
+.delete_button{
+    outline: none;
+    background-color: white;
+    border: 0;
+}
+.header_table{
+   font-weight: bold;
+   text-align: center;
+}
+
+thead {
+    font-weight: bold;
+    font-size: 120%;
+    font-family: 'Prata', serif;
+}
+
+.check{
+    margin: 0;
+}
+

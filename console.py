@@ -14,7 +14,7 @@ registration_repository.delete_all()
 course_1 = Course('Introduction to Bakery', 'Learn how to bake from scratch', 'Thursdays at 16:00', 2, 15, "Maria Antuna")
 course_repository.save(course_1)
 
-course_2 = Course('All I want for Christmas is food', 'Christmas Dinner Recipes', 'Saturdays at 10:00', 2, 10,'Maria Antuna')
+course_2 = Course("All I want for Christmas is food", "This stress-busting course will give you an array of options for the festive period and make sure you're ready to go when that time of year comes around. No need to panic anymore but be prepared, they'll have you making Christmas dinner every year for the rest of your life after this course!", "Saturdays at 10:00", 2, 10,"Maria Antuna")
 course_repository.save(course_2)
 
 course_3 = Course("Salads", 'Vegetarian recipes that you never thought about', 'Tuesdays at 17:00', 1, 15, 'Berasategui')

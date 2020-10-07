@@ -1,29 +1,45 @@
 body {
+    /* height: 100vh; */
     margin: 0;
-    cursor: pointer;
+}
+
+.home_page{
+    height: 90vh;
+    background-image: url(/static/images/spoons.jpg);
+    background-size: 100% 100%;
+    background-position: center bottom;
+}
+header > .menu > .title > img {
+    width: 35%;
+}
+
+.title {
+    display: flex;
+    flex-direction: column;
 }
 
 #header_title{
     font-family: 'Prata', serif;
-    margin: 2vh;
-    text-align: center;
 }
 .menu {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
-    background-color: #8EAEBD;
     margin: 0;
     padding: 0;
     font-family: 'Prata', serif;
+    
 }
 nav > ul {
     display: flex;
     flex-flow: row nowrap;
+    margin-left: 10%;
 }
 
 .home_button{
     margin-right: 5vw;
+    background-color: #931a25;
+    
 }
 nav > ul > li {
     list-style: none;
@@ -33,8 +49,12 @@ nav > ul > li {
     margin-left: 20px;
 }
 
+.nav_button{
+    background-color: #931a25;
+}
 nav > ul> li > a{
-    color:black;
+    background-color: #931a25;
+    color: #f5efef;
 }
 
 a {
@@ -50,45 +70,86 @@ a {
 #index_buttons{
     display: flex;
     justify-content: space-around;
-    padding-top: 40px;
 }
 .student_buttons, .course_buttons{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    border: solid;
+    /* border: solid; */
     border-radius: 3%;
+    padding: 15px;
 }
+
+.index_course_bt > a, .index_student_bt > a{
+    padding: 15px;
+}
+
 .student_buttons > button, .course_buttons > button {
     margin: 40px;
     padding: 30px 30px;
     font-size: 120%;
     border-radius: 3%;
+    width: inherit !important;
 }
 
-table{
-    margin: 5% 5%;
-    border-collapse: collapse;
-    width: 80%;
+/* styling for details_student details */
+.student_details, .course_details {
+    border-top: solid;
+    border-bottom: solid;
+    margin: 4rem 20%;
+    padding-bottom: 3%;
 }
-table, th, td{
-    border: 1px solid black;
-}
-.details{
-    font-size: 14px;
+#container_student_details, #container_course_details{
+    display: flex;
+    justify-content: flex-start;
+    width: 100%;
 }
 
-.delete_button{
-    outline: none;
-    background-color: white;
-    border: 0;
+#container_student_details > div > ul > li, ul> li{
+    padding-left: 2rem;
+    list-style: none;
+    padding-top: 2%;
 }
-.header_table{
-   font-weight: bold;
-   text-align: center;
+
+ul {
+    padding-inline-start: 0;
 }
-thead {
-    font-weight: bold;
-    font-size: 120%;
-    font-family: 'Prata', serif;
+
+.edit_delete{
+    display: flex;
+    justify-content: flex-start;
+    margin: 2rem 0 0 10% ;
+}
+
+.edit_student, .edit_course{
+    margin-right: 15%;
+}
+
+.student_details > h2, .course_details > h2 {
+    text-decoration: underline;
+    margin-left: 20%;
+    margin-top: 5%;
+}
+
+.students-courses {
+    /* padding-left: 10px; */
+    margin-left: 4rem;
+    /* width: 90%; */
+}
+/* course details */
+.date_duration_course, .max_teacher {
+    display: flex;
+    justify-content: space-between;
+}
+
+.block_courses{
+    margin-left: 10%;
+    padding: 0;
+    width: 55%;
+}
+
+.student_block{
+    margin-left: 10%;
+    padding: 0;
+    width: 55%;
 }

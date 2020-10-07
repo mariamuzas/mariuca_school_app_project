@@ -1,36 +1,37 @@
 {% extends 'base.html' %}
 
 {% block content %}
+<div class="form_add_create_edit">
+    <h2>Edit course</h2>
 
-<h2>Edit course</h2>
+    <form class='form_course' action="/courses/{{course.id}}" method="POST">
+        <div class="column_form">
+            <label for="title">Course Title:</label>
+            <input type="text" id="title" name="title" value='{{course.title}}''>
+        </div>
+        <div class="column_form">
+            <label for="description">Description:</label>
+            <textarea id="description" name="description" cols="50" rows="6" value='{{course.description}}'> This stress-busting course will give you an array of options for the festive period and make sure you're ready to go when that time of year comes around. No need to panic anymore but be prepared, they'll have you making Christmas dinner every year for the rest of your life after this course!</textarea>
+        </div>
+        <div class="column_form">
+            <label for="date">Date:</label>
+            <input type="text" id="date" name="date" value='{{course.date}}''>
+        </div>
+        <div class="column_form">
+            <label for="duration">Duration:</label>
+            <input type="number" id="duration" name="duration" value='{{course.duration}}''>
+        </div>
+        <div class="column_form">
+            <label for="max_num_student">Max, Capacity:</label>
+            <input type="number" id="max_num_students" name="max_num_students" value='{{course.max_num_students}}'>
+        </div>
+        <div class="column_form">
+            <label for="teacher_name">Teacher:</label>
+            <input type="text" id="teacher_name" name="teacher_name" value='{{course.teacher_name}}'>
+        </div>
+        <button type="submit">Save changes</button>
 
-<form action="/courses/{{course.id}}" method="POST">
-    <div>
-        <label for="title">Course Title:</label>
-        <input type="text" id="title" name="title" value='{{course.title}}''>
-    </div>
-    <div>
-        <label for="description">Description:</label>
-        <input type="text" id="description" name="description" value='{{course.description}}''>
-    </div>
-    <div>
-        <label for="date">Date:</label>
-        <input type="text" id="date" name="date" value='{{course.date}}''>
-    </div>
-    <div>
-        <label for="duration">Duration:</label>
-        <input type="number" id="duration" name="duration" value='{{course.duration}}''>
-    </div>
-    <div>
-        <label for="max_num_student">Max, Capacity:</label>
-        <input type="number" id="max_num_students" name="max_num_students" value='{{course.max_num_students}}'>
-    </div>
-    <div>
-        <label for="teacher_name">Teacher:</label>
-        <input type="text" id="teacher_name" name="teacher_name" value='{{course.teacher_name}}'>
-    </div>
-    <button type="submit">Save changes</button>
-
-</form>
+    </form>
+</div>
     
 {% endblock content %}

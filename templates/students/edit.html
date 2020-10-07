@@ -1,43 +1,36 @@
 {% extends 'base.html' %}
 {% block content %}
-    <h2>Edit Student</h2>
 
-    <form action="/students/{{student.id}}" method="POST">
-        <div>
-            <label for="name">First and Second name of the Student:</label>
-            <input type="text" id="name" name="name" value="{{student.name}}">
-        </div>
-        <div>
-            <label for="dob">Date of Birth:</label>
-            <input type="date" id="dob" name="dob" value="{{student.dob}}">
-        </div>
-        <div>
-            <label for="experience">Level:</label>
-            <input type="text" id="experience" name="experience" value="{{student.experience}}">
-        </div>
-            <label for="email">Email:</label>
-            <input type="text" id="email" name="email" value="{{student.email}}">
-        </div>
-        <div>
-            <label for="phone">Phone:</label>
-            <input type="text" id="phone" name="phone" value="{{student.phone}}">
-        </div>
+    <div class="form_add_create_edit">
+        <h2>Edit Student</h2>
 
-        <div>
-            <label for="membership">Membership:</label>
-            <input type="text" id="membership" name="membership" value="{{student.membership}}">
-        </div>
-        <div>
-            <label for="course_id">Registration to a new course:</label>
-            <select name="course_id" id="course_id" >
-                {% for course in courses %}
-                <option value="{{course.id}}"> {{ course.title }}</option>
-                {% endfor %}
-            </select>
-        </div>
-
-
-        <input type="submit" value="Save Changes">
-
-    </form>
+        <form action="/students/{{student.id}}" method='POST'>
+            <div class="column_form">
+                <label for="name">First and Second name of the Student:</label>
+                <input type="text" id="name" name="name" value="{{student.name}}">
+            </div>
+            <div class="column_form">
+                <label for="dob">Date of Birth:</label>
+                <input type="date" id="dob" name="dob" value="{{student.dob}}">
+            </div>
+            <div class="column_form">
+                <label for="experience">Level:</label>
+                <input type="text" id="experience" name="experience" value="{{student.experience}}">
+            </div>
+            <div class="column_form">
+                <label for="email">Email:</label>
+                <input type="text" id="email" name="email" value="{{student.email}}">
+            </div>
+            <div class="column_form">
+                <label for="phone">Phone:</label>
+                <input type="text" id="phone" name="phone" value="{{student.phone}}">
+            </div>
+            <div class="column_form">
+                <label for="membership">Membership:</label>
+                <input type="text" id="membership" name="membership" value="{{student.membership}}">
+            </div>
+            <input type="submit" value="Save Changes">
+        </form>
+    </div>
+    
 {% endblock content %}

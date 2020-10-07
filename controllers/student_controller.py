@@ -50,9 +50,8 @@ def delete_student(id):
 
 @student_blueprint.route("/students/<id>/edit")
 def edit_student(id):
-    courses = course_repository.select_all()
     student = student_repository.select(id)
-    return render_template('students/edit.html', student= student, courses=courses)
+    return render_template('students/edit.html', student= student)
 
 @student_blueprint.route("/students/<id>", methods=["POST"])
 def update_student(id):
@@ -62,12 +61,8 @@ def update_student(id):
     email = request.form["email"]
     phone = request.form['phone']
     membership= request.form["membership"]
-    course_id = request.form["course_id"]
 
-    course = course_repository.select(course_id)
     student_to_update = Student(name, dob, experience, email, phone, membership, id)
-    new_registration = Registration(course, student_to_update)
 
     student_repository.update(student_to_update)
-    registration_repository.save(new_registration)
     return redirect(f"/students/{student_to_update.id}")

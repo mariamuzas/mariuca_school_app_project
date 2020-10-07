@@ -1,34 +1,37 @@
 {% extends 'base.html' %}
 {% block content %}
-    <h2>Add a new course</h2>
+    <div class="form_add_create_edit">
+        <h2>Add a new course</h2>
 
-    <form action="/courses" method="POST">
-        <div>
-            <label for="title">Course Title:</label>
-            <input type="text" id="title" name="title">
+        <form class='form_course' action="/courses" method="POST">
+            <div class= "column_form">
+                <label for="title">Course Title:</label>
+                <input type="text" id="title" name="title">
+            </div>
+            <div class= "column_form">
+                <label for="description">Description:</label>
+                <textarea id="description" name="description" cols="50" rows="8"></textarea>
+            </div>
+        <div class="duration_date">
+            <div class= "column_form">
+                <label for="date">Date:</label>
+                <input type="text" id="date" name="date" placeholder="Every:">
+            </div>
+            <div class= "column_form">
+                <label for="duration">Duration:</label>
+                <input type="number" id="duration" name="duration" placeholder="Number of hours">
+            </div>
         </div>
-        <div>
-            <label for="description">Description:</label>
-            <input type="text" id="description" name="description">
-        </div>
-        <div>
-            <label for="date">Date:</label>
-            <input type="text" id="date" name="date">
-        </div>
-        <div>
-            <label for="duration">Duration:</label>
-            <input type="number" id="duration" name="duration">
-        </div>
-        <div>
-            <label for="max_num_student">Max. Capacity:</label>
-            <input type="number" id="max_num_students" name="max_num_students">
-        </div>
-        <div>
-            <label for="teacher_name">Teacher:</label>
-            <input type="text" id="teacher_name" name="teacher_name">
-        </div>
-        <input type="submit">
+            <div class= "column_form">
+                <label for="max_num_student">Max. Capacity:</label>
+                <input type="number" id="max_num_students" name="max_num_students">
+            </div>
+            <div class= "column_form">
+                <label for="teacher_name">Teacher Name:</label>
+                <input type="text" id="teacher_name" name="teacher_name">
+            </div>
+            <input type="submit">
 
-    </form>
-    
+        </form>
+    </div>
 {% endblock content %}

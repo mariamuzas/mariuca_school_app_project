@@ -1,21 +1,31 @@
 {% extends 'base.html' %}
 {% block content %}
-
+<div class="course_details">
     <h2>{{course.title}}</h2>
-    <p>Description: {{course.description}}</p>
-    <p>Every {{course.date}}</p>
-    <p>Duration: {{course.duration}}h</p>
-    <p>Max. number of students: {{course.max_num_students}}</p>
-    <p>Teacher: {{course.teacher_name}}</p>
-    <ul>
-        Students list: 
-        {% for student in students %}
-        <li>{{student.name}}</li>
-        {% endfor %}
-    </ul>
-    <a href="/courses/{{ course.id }}/edit">Edit</a>
-            
-    <form action="/courses/{{ course.id}}/delete" method="POST">
-        <input type="submit" value="delete">
-    </form>
+    <div id="container_course_details">
+        <div class="block_courses">
+            <p class="description_details"><b>Description:</b> <br> {{course.description}}</p>
+            <div class="max_teacher">
+                <p><b>Max. number of students: </b>{{course.max_num_students}}</p>
+                <p><b>Teacher: </b>{{course.teacher_name}}</p>
+            </div>
+            <div class="date_duration_course">
+                <p>Every {{course.date}}</p>
+                <p>Duration: {{course.duration}}h</p>
+            </div>
+        </div>
+        <ul class="students-courses">
+            <b>Students list: </b>
+            {% for student in students %}
+            <li>{{student.name}}</li>
+            {% endfor %}
+        </ul>
+    </div>
+    <div class="edit_delete">
+        <a class ="edit_course" href="/courses/{{ course.id }}/edit">Edit</a>  
+        <form action="/courses/{{ course.id}}/delete" method="POST">
+            <input type="submit" value="Delete">
+        </form>
+    </div>
+</div>
 {% endblock content %}

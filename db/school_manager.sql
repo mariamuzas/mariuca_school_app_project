@@ -5,7 +5,7 @@ DROP TABLE courses;
 CREATE TABLE courses (
     id SERIAL PRIMARY KEY, 
     title VARCHAR(255),
-    description VARCHAR(255),
+    description VARCHAR(400),
     date VARCHAR(255),
     duration INT,
     max_num_students INT,

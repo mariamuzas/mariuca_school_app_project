@@ -6,22 +6,31 @@
     <link href="https://fonts.googleapis.com/css2?family=Prata&display=swap" rel="stylesheet">
     <!-- <link rel="stylesheet" href="static/style.css"> -->
     <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}">
-    
+    <link rel="stylesheet" href="{{url_for('static', filename='css/tables.css')}}">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/show_edit.css')}}">
+
     <title>Mariuca School</title>
 </head>
 <body>
-    <h1 id="header_title" >School App</h1>
-    <div class="menu">
-        <nav >
-            <ul>
-                <li class="home_button"><a href="{{url_for('home')}}">Home</a></li>
-                <li><a href="{{ url_for('students.list_students')}}">Students</a></li>
-                <li><a href="{{ url_for('courses.list_courses')}}">Courses</a></li>
-                <li><a href="{{ url_for('registration.list_registrations')}}">Registrations</a></li>
-            </ul>
-        </nav>
-    </div>
-    {% block content %}
-    {% endblock content %}
+    <header>
+        <div class="menu">
+            <div class="title">
+                <img src="/static/images/Screenshot 2020-10-07 at 15.02.41.png" alt="logo">
+                <h1 id="header_title" >School App</h1>
+            </div>
+            <nav >
+                <ul>
+                    <li class="home_button"><a href="{{url_for('home')}}">Home</a></li>
+                    <li class="nav_button"><a href="{{ url_for('students.list_students')}}">Students</a></li>
+                    <li class="nav_button"><a href="{{ url_for('courses.list_courses')}}">Courses</a></li>
+                    <li class="nav_button"><a href="{{ url_for('registration.list_registrations')}}">Registrations</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main>
+        {% block content %}
+        {% endblock content %}
+    </main>
 </body>
 </html>

@@ -1,6 +1,7 @@
 {% extends 'base.html' %}
 {% block content %}
 
+<div class="form_add_create_edit">
     <p>{{registration.student.name}}</p>
     <form action="/registrations/{{registration.id}}" method="POST">
         <div>
@@ -21,5 +22,5 @@
         </div>
         <input type="submit" value="Save Changes">
     </form>
-
+</div>
 {% endblock content %}
