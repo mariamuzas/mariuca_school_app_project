@@ -31,7 +31,7 @@ def create_registration():
     student= student_repository.select(student_id)
 
     new_registration = Registration(course, student)
-    registration_repository.update(new_registration)
+    registration_repository.save(new_registration)
     return redirect("/registrations")
 
 

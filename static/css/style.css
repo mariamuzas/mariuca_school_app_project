@@ -40,9 +40,10 @@ nav > ul {
 }
 
 .home_button{
+    display: flex;
+    align-items: center;
     margin-right: 5vw;
     background-color: #931a25;
-    
 }
 nav > ul > li {
     list-style: none;
