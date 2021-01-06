@@ -36,4 +36,4 @@ $  flask run
 ```
 <br />
 
-<img width="1279" alt="MariucaSchool_landing_page" src="https://user-images.githubusercontent.com/65955047/103486498-49c6f000-4df6-11eb-8fbb-ecb357884b91.png">
+<img width="1273" alt="mariuca_landing_page" src="https://user-images.githubusercontent.com/65955047/103797935-014f4280-5041-11eb-9d28-b3685a77f8fd.png">
