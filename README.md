@@ -3,6 +3,10 @@ The Mariuca School App is a web app designed to simplify the process of running 
 The app offers the ability to register new student and create courses, as well as adding existing students to new courses. 
 The simplicity of the app is exactly the desired result as the Mariuca School App aims to remove the clutter from the everyday running of a cookery school. 
 
+You can try Mariuca School App out on https://mariuca-school-app.herokuapp.com/
+
+You can also run it locally, instructions to set it up below.
+
 ## MVP
 
 The app should:
@@ -16,12 +20,6 @@ The app should:
 ## Example Extensions
 
 - The School could be able to give its students Premium or Standard membership. Standard students can only be signed up for Beginner and Intermediate courses, Premium members would be entitled to Advanced courses
-
-<br />
-<br /> 
-
-You can try Mariuca School App out on https://mariuca-school-app.herokuapp.com/
-You can also run it locally:
 
 ## Setup
 Create the database of this project:
