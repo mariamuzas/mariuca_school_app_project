@@ -17,6 +17,11 @@ The app should:
 
 - The School could be able to give its students Premium or Standard membership. Standard students can only be signed up for Beginner and Intermediate courses, Premium members would be entitled to Advanced courses
 
+<br />
+<br /> 
+
+You can try Mariuca School App out on https://mariuca-school-app.herokuapp.com/
+You can also run it locally:
 
 ## Setup
 Create the database of this project:
