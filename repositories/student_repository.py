@@ -1,7 +1,7 @@
 from db.run_sql import run_sql
 from models.student import Student
 from models.course import Course
-import repositories.course_repository as course_repository
+# import repositories.course_repository as course_repository
 
 def save(student):
     sql = "INSERT INTO students(name, dob, experience, email, phone, membership) VALUES ( %s, %s, %s, %s, %s, %s ) RETURNING id"
