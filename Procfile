@@ -1,1 +1,1 @@
-web: gunicorn mariuca_school:app
+web: gunicorn app:app
