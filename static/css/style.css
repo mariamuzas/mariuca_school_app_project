@@ -3,12 +3,16 @@ body {
 }
 
 .home_page{
-    height: 90vh;
+    height: 81vh;
     background-image: url(/static/images/spoons.jpg);
-    background-size: 100% 100%;
+    /* background-repeat: no-repeat; */
+    background-attachment: fixed;
+    background-size: 100%;
     background-position: center bottom;
 }
+
 header > .menu > .title > img {
+    margin-top: 10px;
     width: 40%;
 }
 
@@ -36,8 +40,10 @@ header > .menu > .title > img {
 nav > ul {
     display: flex;
     flex-flow: row nowrap;
-    margin-left: 10%;
+    /* margin-left: 20%; */
 }
+
+
 
 .home_button{
     display: flex;
@@ -48,7 +54,7 @@ nav > ul {
 nav > ul > li {
     list-style: none;
     border: 2px solid;
-    border-radius: 7%;
+    border-radius: 7px;
     padding: 2px 5px;
     margin-left: 20px;
 }
@@ -67,10 +73,25 @@ a {
     color:  #931a25;
 }
 
+a:hover {
+    color: #e00a0a;
+}
+
+nav > ul > li > a:hover {
+    color: #f5efef;
+   border-color: #e00a0a;
+   margin-bottom: 10px;
+}
+
+nav > ul > li:hover {
+    color: #f5efef;
+   border-color: #e00a0a;
+}
+
 .welcome {
     display: flex;
     justify-content: center;
-    padding-top: 20px;
+    padding-top: 30px;
 }
 
 #index_buttons{
@@ -83,6 +104,7 @@ a {
     justify-content: center;
     /* border: solid; */
     border-radius: 3%;
+    margin: 12vh 5vh;
 }
 
 .index_courses_bt > a, .index_student_bt > a{
@@ -91,10 +113,12 @@ a {
 }
 
 .student_buttons > button, .course_buttons > button {
-    margin: 40px;
-    padding: 2.5rem;
-    font-size: 120%;
-    border-radius: 3%;
+    /* margin: 40px; */
+    padding: 3rem;
+    font-size: 150%; 
+    border-radius: 10px;
+    box-shadow: 0 0 5px #000000;
+    border: 3px solid;
     width: inherit !important;
     background-color: white;
 }
