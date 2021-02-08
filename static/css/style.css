@@ -1,9 +1,10 @@
 body {
     margin: 0;
+    height: 100vh !important;
 }
 
 .home_page{
-    height: 81vh;
+    /* height: 81vh; */
     background-image: url(/static/images/spoons.jpg);
     /* background-repeat: no-repeat; */
     background-attachment: fixed;
@@ -183,4 +184,12 @@ ul {
     margin-left: 10%;
     padding: 0;
     width: 55%;
+}
+
+footer > p {
+    position: fixed;
+   left: 0;
+   bottom: 0;
+   width: 100%;
+   text-align: center;
 }
