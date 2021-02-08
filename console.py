@@ -29,28 +29,28 @@ course_repository.save(course_5)
 course_6 = Course("Under The Sea!", "Hidden in rivers and under the sea lie some of the tastiest treats you could ever find. For a long time eating seafood has meant a prawn cocktail or fish supper but those days are gone with our amazing seafood course that'll show you exactly what Sebastien from Little Mermaid really was talking about, 'Life under the sea is better than anything they got up there!'", 'Fridays at 15:00', 1, 15, 'Martin Berasategui')
 course_repository.save(course_6)
 
-student_1 = Student('Valerie Liberty', '10/04/1980', 'Intermediate', "vliberty@gmail.com", '7852341700', True)
+student_1 = Student('Valerie Liberty', '10/04/1980', 'Intermediate', "vliberty@test.com", '7852341700', True)
 student_repository.save(student_1)
 
-student_2 = Student('Marco Botton', '07/07/1977', 'Beginner', "bottonmarco@gmail.com", '7284932045', False)
+student_2 = Student('Marco Botton', '07/07/1977', 'Beginner', "bottonmarco@test.com", '7284932045', False)
 student_repository.save(student_2)
 
-student_3 = Student('Alex Mateo', '12/09/1950', 'Advanced', "mate0300@gmail.com",'7430328501', True )
+student_3 = Student('Alex Mateo', '12/09/1950', 'Advanced', "mate0300@test.com",'7430328501', True )
 student_repository.save(student_3)
 
-student_4 = Student('Warren Peace', '3/07/1993', 'Advanced', "wpeace01@gmail.com",'7430334501', True )
+student_4 = Student('Warren Peace', '3/07/1993', 'Advanced', "wpeace01@test.com",'7430334501', True )
 student_repository.save(student_4)
 
-student_5 = Student('Barbara Mendez','3/4/1990', 'Beginner', "barb1990@gmail.com", '7284932935', False)
+student_5 = Student('Barbara Mendez','3/4/1990', 'Beginner', "barb1990@test.com", '7284932935', False)
 student_repository.save(student_5)
 
-student_6 = Student('James McFadden', '12/01/1989', 'Intermediate', "james@gmail.com", '7128432935', True)
+student_6 = Student('James McFadden', '12/01/1989', 'Intermediate', "james@test.com", '7128432935', True)
 student_repository.save(student_6)
 
-student_7 = Student('Sonny Day', '12/04/1979', 'Intermediate', "sonnyday@gmail.com", '7128432845', False)
+student_7 = Student('Sonny Day', '12/04/1979', 'Intermediate', "sonnyday@test.com", '7128432845', False)
 student_repository.save(student_7)
 
-student_8 = Student('Nora Jones', "1/04/1993", 'Beginner', "morazoaz1993@gmail", '675822933', False)
+student_8 = Student('Nora Jones', "1/04/1993", 'Beginner', "morazoaz1993@test.com", '675822933', False)
 student_repository.save(student_8)
 
 registration_1 = Registration(course_1, student_1)
